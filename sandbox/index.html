@@ -1,0 +1,67 @@
+<!doctype html>
+
+<head>
+  <title>Sandbox</title>
+  <link rel=stylesheet href="http://fonts.googleapis.com/css?family=Averia+Serif+Libre:300,400">
+  <link rel=stylesheet href="../style.css">
+  <meta http-equiv=Content-Type content="text/html; charset=utf-8">
+  <script src="../lib/codemirror2/lib/codemirror.js"></script>
+  <script src="../lib/codemirror2/mode/javascript/javascript.js"></script>
+  <script src="../lib/codemirror2/mode/xml/xml.js"></script>
+  <script src="../lib/codemirror2/mode/css/css.js"></script>
+  <script src="../lib/codemirror2/mode/htmlmixed/htmlmixed.js"></script>
+  <link rel=stylesheet href="../lib/codemirror2/lib/codemirror.css">
+  <script src="sandbox.js"></script>
+  <style>
+    body, html { height: 100%; width: auto; max-width: none; margin: 0; padding: 0; overflow: hidden; }
+    #editor {
+      padding-top: 40px;
+      background: white;
+      position: relative;
+    }
+    #controls, #save-load {
+      font-size: 13px;
+      padding: 5px 10px;
+      position: absolute; top: 0px; height: 30px;
+    }
+    #controls {
+      cursor: move;
+      cursor: s-resize;
+      cursor: row-resize;
+      left: 0; right: 0; background: #eee;
+      border-bottom: 1px solid #ddd; border-top: 1px solid #ddd; margin-top: -1px;
+    }
+    #controls * {
+      cursor: default;
+    }
+    #save-load {
+      z-index: 2; right: 0;
+    }
+    .CodeMirror-gutter {
+      background: #eee; border-right: 1px solid #ddd;
+    }
+    .CodeMirror {
+      font-size: 16px;
+    }
+    button, select {
+      font-family: inherit;
+      font-size: inherit;
+    }
+    iframe {
+      border: none;
+    }
+  </style>
+</head>
+
+<div id=output></div>
+<div id=editor>
+  <div id=controls>
+    <button onclick="render()">Render</button>
+    <span id=docname></span>
+  </div>
+  <div id=save-load>
+    <button onclick="save()">Save as</button> <input id=savename type=text style="width: 4em; vertical-align: bottom">
+    <select id="load" disabled onchange="load()"><option value="*">Load…</option></select>
+  </div>
+</div>
+
