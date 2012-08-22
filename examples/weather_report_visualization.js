@@ -18,43 +18,26 @@ var weatherData = [
 	}
 ];
 
-
-function average(property) {
-  var sum = 0,
-		count = 0;
-		
-  while (count < weatherData.length) {
-    var temperature = weatherData[count][property];
-		sum = sum + temperature;
-		count = count + 1;
-  }
-	return Math.floor(sum / count);
-}
-
-function barChart(x, y, barWidth, property) {
+function barChart(x, y, barWidth) {
 	var gutter = 2,
 		xPosition = x,
 		yPosition = y;
+
+	var barHeight = -1 * weatherData[0].temperature;
+	box(xPosition, yPosition, barWidth, barHeight);
 	
-	var count = 0;
-	while (count < weatherData.length) {
-		var barHeight = -1 * weatherData[count][property];
-		box(xPosition, yPosition, barWidth, barHeight);
-		xPosition = xPosition + barWidth + gutter;
-		count = count + 1;
-	}	
+	barHeight = -1 * weatherData[1].temperature;
+	xPosition = xPosition + gutter + barWidth;
+	box(xPosition, yPosition, barWidth, barHeight);
+	
+	barHeight = -1 * weatherData[2].temperature;
+	xPosition = xPosition + gutter + barWidth;
+	box(xPosition, yPosition, barWidth, barHeight);
 }
 
 function drawing() {
-
 	color("red");
-	barChart(0, 140, 20, "temperature");
-	text(0, 120, "Average temperature: " + average("temperature") + "°");	
-
-
-	color("blue");
-	barChart(0, 20, 20, "humidity");
-	text(0, 0, "Average humidity: " + average("humidity") + "%");
+	barChart(0, 0, 20);
 }
 
 

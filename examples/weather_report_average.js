@@ -2,33 +2,32 @@
 
 var weatherData = [
 	{
-		date: "2012-08-21",
-		temperature: 30,
-		humidity: 10
-	},
-	{
 		date: "2012-08-22",
-		temperature: 24,
-		humidity: 45
+		temperature: 30,
+		humidity: 40
 	},
 	{
 		date: "2012-08-23",
+		temperature: 32,
+		humidity: 80
+	},
+	{
+		date: "2012-08-24",
 		temperature: 28,
-		humidity: 30
+		humidity: 20
 	}
 ];
 
 
-function average(property) {
+function averageTemperature(property) {
   var sum = 0,
 		count = 0;
 		
   while (count < weatherData.length) {
-    var temperature = weatherData[count][property];
-		sum = sum + temperature;
 		count = count + 1;
   }
-	return Math.floor(sum / count);
+  
+	return sum;
 }
 
 function barChart(x, y, barWidth, property) {
@@ -47,14 +46,8 @@ function barChart(x, y, barWidth, property) {
 
 function drawing() {
 
-	color("red");
-	barChart(0, 140, 20, "temperature");
-	text(0, 120, "Average temperature: " + average("temperature") + "°");	
+	text(0, 120, "Average temperature: " + averageTemperature() + "°");	
 
-
-	color("blue");
-	barChart(0, 20, 20, "humidity");
-	text(0, 0, "Average humidity: " + average("humidity") + "%");
 }
 
 
