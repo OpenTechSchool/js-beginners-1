@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'Averia Serif Libre';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Averia Serif Libre Light'), local('AveriaSerifLibre-Light'), url(yvITAdr5D1nlsdFswJAb8Vos2Pdf-dQN4tJmHAEs2hQ.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Averia Serif Libre';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Averia Serif Libre Regular'), local('AveriaSerifLibre-Regular'), url(fdtF30xa_Erw0zAzOoG4BVVaXhodyZpwkPyKEugoMLo.woff2) format('woff2');
+}
