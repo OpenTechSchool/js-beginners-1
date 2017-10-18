@@ -15,8 +15,16 @@ function smiley(x, y) {
 function drawing() {
   // The angle variable stores the current rotation
   var angle = 0;
-  // Draw twenty frames per second (20 * 50 = 1000 milliseconds)
-  setInterval(frame, 50);
+  
+  // We want to draw twenty frames per second 
+  var framesPerSecond = 20;
+
+  // 1 second equals 1000 milliseconds.
+  var frameInterval = 1000 / framesPerSecond;
+  
+  // setInterval expects the interval in milliseconds
+  setInterval(frame, frameInterval);
+  
   function frame() {
     // Clear the screen
     clear();
