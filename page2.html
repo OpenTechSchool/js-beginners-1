@@ -73,10 +73,10 @@ writing <code>circle(x, y, something)</code> twenty times.</p>
 to get a <code>drawing</code> function containing this program:</p>
 
 <pre>color("red");
-var count = 0;
-while (count < 20) {
-  circle(count * 10, 0, 4);
-  count = count + 1;
+var column = 0;
+while (column < 20) {
+  circle(column * 10, 0, 4);
+  column = column + 1;
 }</pre>
 
 <h3 class=ex>Explanation</h3>
@@ -89,7 +89,7 @@ to draw our dots.</p>
 
 <p>The word <code>while</code> can be used to create a special kind of
 statement that is called a <em>loop</em>. It consists of
-a <em>condition</em> (<code>count &lt; 20</code>) and a <em>body</em>
+a <em>condition</em> (<code>column &lt; 20</code>) and a <em>body</em>
 (the part between the braces). A loop does not obey the usual top-down
 order of execution. It will continue executing the body as long as the
 condition holds true.</p>
@@ -102,13 +102,13 @@ This is done to help readability of the program, but isn't
 strictly required.</p>
 
 <p>The example code uses a variable to track its progress.
-The <code>count</code> variable starts at zero, and is moved forward
+The <code>column</code> variable starts at zero, and is moved forward
 by one every time the loop body executes. A loop condition is a
 normal expression, and the <code>&lt;</code> symbol is a normal
 operator that compares two expressions and returns a value that
 indicates whether the one to the left is smaller than the one to the
 right. Thus, we can expect the loop body to be executed exactly twenty
-times—first with <code>count</code> at zero, then at one, and so on
+times—first with <code>column</code> at zero, then at one, and so on
 until nineteen. When it reaches twenty, the condition no longer holds,
 and the program continues below the loop (which is the end of our
 example).</p>
@@ -123,7 +123,7 @@ whether a value is greater than (<code>></code>) or equal to
 
 <p><strong>Exercise:</strong> try to write a program that prints a
 20-by-20 <em>grid</em> of dots, instead of just a line. You'll need
-two loops, and two counter variables. Hint: you may put a loop inside
+two loops, and two counter variables (one for columns, one for rows). Hint: you may put a loop inside
 another loop.</p>
 
 <p>When trying out programs in the sandbox, keep an eye on the
@@ -147,15 +147,15 @@ different color. The even ones should be black, the odd ones grey.</p>
 function, does what we want, and is
 available <a href="sandbox/#drawing_if.js" target=_blank>here</a>:</p>
 
-<pre>var count = 0;
-while (count < 20) {
-  if (count % 2 == 0) {
+<pre>var column = 0;
+while (column < 20) {
+  if (column % 2 == 0) {
     color("black");
   } else {
     color("gray");
   }
-  circle(count * 10, 0, 4);
-  count = count + 1;
+  circle(column * 10, 0, 4);
+  column = column + 1;
 }</pre>
 
 <h3 class=ex>Explanation</h3>
@@ -164,8 +164,8 @@ while (count < 20) {
 operator. This is pronounced 'remainder'. It is not a very important
 operator, but it is useful here. What it does is divide the value on
 the left by the one on the right, and give us the remainder of that
-division. Thus, <code>count % 2 == 0</code> is a way to check
-whether <code>count</code> is even—if it is, then the remainder of
+division. Thus, <code>column % 2 == 0</code> is a way to check
+whether <code>column</code> is even—if it is, then the remainder of
 dividing it by two will be zero.</p>
 
 <p>But the <em>important</em> new concept introduced here is

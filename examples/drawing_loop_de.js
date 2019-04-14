@@ -1,10 +1,10 @@
 // use_html: drawing.html
 function drawing() {
   color("red");
-  var count = 0;
-  while (count < 20) {
-    circle(count * 10, 0, 4);
-    count = count + 1;
+  var column = 0;
+  while (column < 20) {
+    circle(column * 10, 0, 4);
+    column = column + 1;
   }
 }
 

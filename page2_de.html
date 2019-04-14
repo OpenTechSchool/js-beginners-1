@@ -84,10 +84,10 @@
   gelangen:</p>
 
 <pre>color("red");
-var count = 0;
-while (count < 20) {
-  circle(count * 10, 0, 4);
-  count = count + 1;
+var column = 0;
+while (column < 20) {
+  circle(column * 10, 0, 4);
+  column = column + 1;
 }</pre>
 
 <h3 class=ex>Erklärung</h3>
@@ -104,7 +104,7 @@ while (count < 20) {
   (englisch: <em>loop</em>). Eine Schleife besteht aus einer
   <em>Bedingung</em> (englisch: <em>condition</em>) und einem
   <em>Schleifenkörper</em> (englisch: <em>body</em>). Im Beispiel
-  ist <code>count &lt; 20</code> die Bedingung und der Körper ist
+  ist <code>column &lt; 20</code> die Bedingung und der Körper ist
   alles, was zwischen den geschweiften Klammern steht.
   Eine Schleife hält sich nicht an die gewöhnliche Top-Down-Reihenfolge.
   Stattdessen wiederholt sie den Körper so lange, wie die Bedingung
@@ -119,7 +119,7 @@ while (count < 20) {
   Unbedingt erforderlich ist es aber nicht.</p>
 
 <p>Im Beispiel verwendet die Schleife eine Variable als inneren
-  Fortschritts-Anzeiger. Die Variable <code>count</code> fängt
+  Fortschritts-Anzeiger. Die Variable <code>column</code> fängt
   mit dem Wert null an und wird jedesmal, wenn der Schleifenkörper
   ausgeführt wird, um eins erhöht. Eine Bedingung ist ein ganz
   normaler Ausdruck und das Symbol <code>&lt;</code> ist ein
@@ -127,9 +127,9 @@ while (count < 20) {
   und als Wert etwas zurückgibt, dass angibt ob der Wert auf der
   linken Seite kleiner ist als der auf der rechten Seite.
   Wir würden also erwarten, dass der Schleifenkörper genau
-  zwanzigmal ausgeführt wird—beim ersten Mal mit <code>count</code>
+  zwanzigmal ausgeführt wird—beim ersten Mal mit <code>column</code>
   bei null, dann bei eins und so weiter, bis 19.
-  Wenn <code>count</code> 20 erreicht, ist die Bedingung nicht
+  Wenn <code>column</code> 20 erreicht, ist die Bedingung nicht
   mehr gültig und das Programm wird hinter der Schleife fortgesetzt
   (was in unserem Fall das Ende des Beispiels ist).</p>
 
@@ -144,7 +144,7 @@ while (count < 20) {
 <p><strong>Übung:</strong> Versuche ein Programm zu schreiben,
   das, statt nur eine gepunktete Linie zu malen, ein <em>Raster</em>
   mit 20 mal 20 Punkten malt. Dafür brauchst Du zwei Schleifen
-  und zwei Variablen zum Zählen. Hinweis: Du kannst eine Schleife
+  und zwei Variablen zum Zählen, eine für die Spalten (columns) und eine für die Reihen (rows) des Rasters. Hinweis: Du kannst eine Schleife
   innerhalb einer anderen Schleife schreiben.</p>
 
 <p>Während Du Programme in der Spielumgebung ausprobierst, halte
@@ -172,15 +172,15 @@ while (count < 20) {
   <a href="sandbox/#drawing_if_de.js" target=_blank>hier</a>.
   So sieht es aus:</p>
 
-<pre>var count = 0;
-while (count < 20) {
-  if (count % 2 == 0) {
+<pre>var column = 0;
+while (column < 20) {
+  if (column % 2 == 0) {
     color("black");
   } else {
     color("gray");
   }
-  circle(count * 10, 0, 4);
-  count = count + 1;
+  circle(column * 10, 0, 4);
+  column = column + 1;
 }</pre>
 
 <h3 class=ex>Erklärung</h3>
@@ -189,8 +189,8 @@ while (count < 20) {
   gesprochen 'Modulo'. Man braucht ihn nicht so häufig, aber hier
   ist er nützlich. Er teil die Zahl auf der linken Seite durch die
   auf der rechten Seite und gibt den Rest der Division zurück.
-  Mit <code>count % 2 == 0</code> kann man also prüfen, ob
-  <code>count</code> eine gerade Zahl ist, denn dann ist der
+  Mit <code>column % 2 == 0</code> kann man also prüfen, ob
+  <code>column</code> eine gerade Zahl ist, denn dann ist der
   Rest null, wenn man sie durch zwei teilt.</p>
 
 <p>Das eigentlich <em>wichtige</em> neue Konzept hier ist die
