@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <script type="text/javascript">
+  function square()
+  {
+    var num = parseInt(window.prompt("Enter the number:"));
+    var str = "";
+    for (i = 0; i < num; i++) 
+    {
+        for (j = 0; j < num; j++) 
+        {
+            if (i == 0 || i == num - 1 || j == 0 || j == num - 1) 
+            {
+                str = str + "* " ;
+            } 
+            else 
+            {
+                str = str + "  ";
+            }
+        }
+        str = str + "\n";
+    }
+
+      console.log(str);
+  }
+  function cross()
+  {
+    var num=parseInt(window.prompt("Enter a number:"));
+    var str="";
+    for(i=0;i<num;i++)
+    {
+      for(j=0;j<num;j++)
+      {
+        if(i==j||i==num-(j+1))
+        {
+          str=str+"* ";
+        }
+        else
+        {
+          str=str+"   ";
+        }
+      }
+      str=str+"\n";
+    }
+    console.log(str);
+  }
+  function tria()
+  {
+    var a=parseInt(window.prompt("Enter length of tria:"));
+    var b="";
+    for(i=1;i<=a;i++)
+    {
+      for(j=a;j>i;j--)
+      {
+        b=b+" ";
+      }
+      for(k=0;k<i;k++)
+      {
+        b=b+"* ";
+      }
+      b=b+"\n";
+    }
+    console.log(b);
+  }
+  </script>
+</head>
+<body>
+  <button onclick="square()">click me to create a square​</button><br>
+  <button onclick="cross()">click me to create X</button><br>
+  <button onclick="tria()">click here to create a triangle </button>
+</body>
+</html>
